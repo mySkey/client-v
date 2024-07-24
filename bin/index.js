@@ -18,11 +18,11 @@ function getTimeStr() {
 function asyncVersion(distDir = 'dist') {
   const newVersion = getTimeStr();
   shelljs.cd(`./${distDir}`);
-  shelljs.touch('client_c_version.json');
+  shelljs.touch('client_v_version.json');
   shelljs
     .ShellString(`{"version": "${newVersion}"}`)
-    .to('client_c_version.json');
-  // shelljs.exec(`echo '{"version": "${newVersion}"}' > client_c_version.json`);
+    .to('client_v_version.json');
+  // shelljs.exec(`echo '{"version": "${newVersion}"}' > client_v_version.json`);
 }
 
 program

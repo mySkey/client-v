@@ -9,7 +9,7 @@ export const CLIENT_STORAGE_KEY = 'Client-Version';
  * @author: mysden
  */
 export const getRemoteVersion = async () => {
-  const response = await fetch('/client_c_version.json', {
+  const response = await fetch('/client_v_version.json', {
     method: 'get',
     headers: { 'Cache-Control': 'no-cache' },
   });
