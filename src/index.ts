@@ -33,9 +33,11 @@ export const getClientVersion = () => {
 export async function authFrontVersion(location) {
   const href = location?.href || location.pathname + location.search;
   // 开发环境不校验版本
-  const excluedeModes: string[] = ['development'];
-  const mode = process.env.REACT_APP_BUILD_ENV;
-  if (excluedeModes?.includes(mode || '')) return;
+  try {
+    const excluedeModes: string[] = ['development'];
+    const mode = process.env.REACT_APP_BUILD_ENV;
+    if (excluedeModes?.includes(mode || '')) return;
+  } catch (e) {}
   // 校验部署版本变动
   const version = await getRemoteVersion();
 
